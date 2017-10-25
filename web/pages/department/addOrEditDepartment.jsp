@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -27,21 +28,22 @@
        	<img src="${pageContext.request.contextPath}/images/button/save.gif" />
        </a>
        <!-- 执行js，进行返回 -->
-       <a href="javascript:void(0)" onclick="window.history.go(-1)"><img src="${pageContext.request.contextPath}/images/button/tuihui.gif" /></a>
+       <a href="findAllDepart.action"><img src="${pageContext.request.contextPath}/images/button/tuihui.gif" /></a>
       
     </td>
     <td width="3%" align="right"><img src="${pageContext.request.contextPath}/images/tright.gif"/></td>
   </tr>
 </table>
 
-<form action="${pageContext.request.contextPath}/pages/department/listDepartment.jsp" method="post">
+<form action="${pageContext.request.contextPath}/addOrEditDepart.action" method="post">
 	<table width="88%" border="0" class="emp_table" style="width:80%;">
+        <input type="hidden" name="depID" value="${param.depID}${department.depID}"/>
 	 <tr>
 	    <td>部门名称：</td>
-	    <td><input type="text" name="depName" value="教学部"/></td>
+	    <td><input type="text" name="depName" value="${param.depName}${department.depName}"/></td>
 	  </tr>
 	</table>
 </form>
-
+<s:actionerror />
 </body>
 </html>

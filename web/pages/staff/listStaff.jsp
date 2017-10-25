@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -7,6 +8,7 @@
 <title>无标题文档</title>
 
 <link href="${pageContext.request.contextPath}/css/sys.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="../../jquery-3.2.1.js"></script>
 </head>
 
 <body >
@@ -83,7 +85,7 @@
     <td width="10%" align="center">编辑</td>
   </tr>
   
-    
+    <tbody>
 	  <tr class="tabtd1"> 
 	    <td align="center">管理员</td>
 	    <td align="center"></td>
@@ -96,18 +98,22 @@
 	  	</td>
 	  	
 	  </tr>
+
+	  <c:forEach items="${staffs}" var="staff">
     
 	  <tr class="tabtd2"> 
-	    <td align="center">赵六</td>
-	    <td align="center">男</td>
-	    <td align="center">2012-02-12</td>
-	    <td align="center">咨询部</td>
-	    <td align="center">主管</td>
+	    <td align="center">${staff.staffName}</td>
+	    <td align="center">${staff.gender}</td>
+	    <td align="center">${staff.onDutyDate}</td>
+	    <td align="center">${staff.post.department.depName}</td>
+	    <td align="center">${staff.post.postName}</td>
 	  	<td width="7%" align="center">
 	  		
 	  		<a href="${pageContext.request.contextPath}/pages/staff/editStaff.jsp"><img src="${pageContext.request.contextPath}/images/button/modify.gif" class="img" /></a>	
 	  	</td>
 	  </tr>
+	  </c:forEach>
+	</tbody>
 </table>
 
 
@@ -127,4 +133,7 @@
 </table>
 --%>
 </body>
+<script>
+
+</script>
 </html>

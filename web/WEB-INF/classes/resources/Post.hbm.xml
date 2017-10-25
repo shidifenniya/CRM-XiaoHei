@@ -7,14 +7,15 @@
             <generator class="uuid"/>
         </id>
         <property name="postName" length="100"/>
-        <set name="staffs" cascade="all" lazy="false">
+        <set name="staffs" cascade="all">
             <key column="postID"/>
             <one-to-many class="com.lanou.domain.Staff"/>
         </set>
-        <!--<many-to-one name="department"-->
-                     <!--class="com.lanou.domain.Department"-->
-                     <!--not-null="true"-->
-                     <!--cascade="all"-->
-                     <!--column="depId"/>-->
+        <many-to-one name="department"
+                     lazy="false"
+                     class="com.lanou.domain.Department"
+                     not-null="true"
+                     cascade="all"
+                     column="depId"/>
     </class>
 </hibernate-mapping>

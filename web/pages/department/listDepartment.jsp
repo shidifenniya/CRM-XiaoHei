@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -44,21 +45,14 @@
     <td width="6%" align="center">部门名称</td>
     <td width="7%" align="center">编辑</td>
   </tr>
-  
+  <c:forEach items="${departmentList}" var="depart">
 	  <tr class="tabtd1">
-	    <td align="center">教学部 </td>
+	    <td align="center"> ${depart.depName}</td>
 	  	<td width="7%" align="center">
-	  		<a href="${pageContext.request.contextPath}/pages/department/addOrEditDepartment.jsp"><img src="${pageContext.request.contextPath}/images/button/modify.gif" class="img"/></a>
+	  		<a href="${pageContext.request.contextPath}/pages/department/addOrEditDepartment.jsp?depName=${depart.depName}&depID=${depart.depID}"><img src="${pageContext.request.contextPath}/images/button/modify.gif" class="img"/></a>
 	  	</td>
 	  </tr>
-  
-	  <tr class="tabtd2">
-	    <td align="center">咨询部 </td>
-	  	<td width="7%" align="center">
-	  		<a href="${pageContext.request.contextPath}/pages/department/addOrEditDepartment.jsp"><img src="${pageContext.request.contextPath}/images/button/modify.gif" class="img"/></a>
-	  	</td>
-	  </tr>
-  
+  </c:forEach>
 </table>
 
 

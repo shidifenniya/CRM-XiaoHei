@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
+import java.util.List;
+
 /**
  * Created by dllo on 17/10/25.
  */
@@ -24,6 +26,8 @@ public class StaffAction extends ActionSupport implements ModelDriven<Staff>{
     private StaffService staffService;
 
     private Staff staff;
+
+    private List<Staff> staffs;
 
     public String login(){
 
@@ -45,6 +49,16 @@ public class StaffAction extends ActionSupport implements ModelDriven<Staff>{
 
     }
 
+    public String findAll(){
+
+        this.staffs = staffService.findAllStaff();
+
+        System.out.println(staffs);
+
+        return SUCCESS;
+
+    }
+
     public void validateLogin(){
 
         if(StringUtils.isBlank(staff.getLoginName()) || StringUtils.isBlank(staff.getLoginPwd())){
@@ -61,5 +75,13 @@ public class StaffAction extends ActionSupport implements ModelDriven<Staff>{
         staff = new Staff();
 
         return staff;
+    }
+
+    public List<Staff> getStaffs() {
+        return staffs;
+    }
+
+    public void setStaffs(List<Staff> staffs) {
+        this.staffs = staffs;
     }
 }

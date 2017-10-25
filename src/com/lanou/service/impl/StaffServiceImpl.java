@@ -4,6 +4,8 @@ import com.lanou.dao.StaffDao;
 import com.lanou.domain.Staff;
 import com.lanou.service.StaffService;
 
+import java.util.List;
+
 /**
  * Created by dllo on 17/10/25.
  */
@@ -20,6 +22,14 @@ public class StaffServiceImpl implements StaffService {
 
         return staffDao.findSingle(hql, params);
 
+    }
+
+    @Override
+    public List<Staff> findAllStaff() {
+
+        String hql = "from Staff";
+
+        return staffDao.findAll(hql);
     }
 
     public StaffDao getStaffDao() {
