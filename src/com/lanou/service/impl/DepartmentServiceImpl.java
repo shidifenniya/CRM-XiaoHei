@@ -4,6 +4,7 @@ import com.lanou.dao.DepartmentDao;
 import com.lanou.domain.Department;
 import com.lanou.service.DepartmentService;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -26,14 +27,22 @@ public class DepartmentServiceImpl implements DepartmentService {
 
         if (department.getDepID().equals("")) {
 
-            departmentDao.addDepart(department);
+            departmentDao.add(department);
 
         } else {
 
-            departmentDao.updateDepart(department);
+            departmentDao.update(department);
 
         }
     }
+
+    @Override
+    public Department findDepartById(Serializable id) {
+
+        return departmentDao.findById(id,Department.class);
+
+    }
+
 
     public DepartmentDao getDepartmentDao() {
         return departmentDao;

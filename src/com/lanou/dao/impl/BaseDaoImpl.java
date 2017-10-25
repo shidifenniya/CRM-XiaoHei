@@ -47,4 +47,18 @@ public class BaseDaoImpl<T> extends HibernateDaoSupport implements BaseDao<T> {
 
         return t;
     }
+
+    @Override
+    public void add(T t) {
+
+        getHibernateTemplate().save(t);
+
+    }
+
+    @Override
+    public void update(T t) {
+
+        getHibernateTemplate().update(t);
+
+    }
 }

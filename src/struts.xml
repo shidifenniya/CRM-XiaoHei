@@ -42,6 +42,20 @@
 
         </action>
 
+        <action name="intoEditPost" class="com.lanou.action.PostAction" method="intoEditPost">
+
+            <result name="success">/pages/post/addOrEditPost.jsp</result>
+
+        </action>
+
+        <action name="addOrEditPost" class="com.lanou.action.PostAction" method="addOrEditPost">
+
+            <result name="success">/pages/post/listPost.jsp</result>
+
+            <result name="input">/pages/post/addOrEditPost.jsp</result>
+
+        </action>
+
         <action name="findAllStaff" class="com.lanou.action.StaffAction" method="findAll">
 
             <result name="success">/pages/staff/listStaff.jsp</result>

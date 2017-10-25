@@ -17,4 +17,8 @@ public interface BaseDao<T> {
 
     T findById(Serializable id, Class<T> tClass);
 
+    void add(T t);
+
+    void update(T t);
+
 }

@@ -2,6 +2,7 @@ package com.lanou.service;
 
 import com.lanou.domain.Department;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -12,5 +13,7 @@ public interface DepartmentService {
     List<Department> findAllDepart();
 
     void addOrEditDepart(Department department);
+
+    Department findDepartById(Serializable id);
 
 }
