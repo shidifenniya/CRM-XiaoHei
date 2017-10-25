@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.devMode" value="true"/>
+
+    <constant name="struts.objectFactory" value="spring"/>
+
+    <package name="crm" extends="json-default">
+
+        <action name="login" class="com.lanou.action.StaffAction" method="login">
+
+            <result name="error">pages/error.jsp</result>
+
+            <result name="success">pages/frame.jsp</result>
+
+            <result name="input">pages/login.jsp</result>
+
+        </action>
+
+    </package>
+
+</struts>
