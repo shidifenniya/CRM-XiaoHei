@@ -62,6 +62,59 @@
 
         </action>
 
+        <action name="addStaff" class="com.lanou.action.StaffAction" method="addStaff">
+
+            <result name="success">/pages/staff/listStaff.jsp</result>
+
+            <result name="input">/pages/staff/addStaff.jsp</result>
+
+        </action>
+
+        <action name="intoEditStaff" class="com.lanou.action.StaffAction" method="intoEditStaff">
+
+            <result name="success">pages/staff/editStaff.jsp</result>
+
+        </action>
+
+        <action name="editStaff" class="com.lanou.action.StaffAction" method="addStaff">
+
+            <result name="success">/pages/staff/listStaff.jsp</result>
+
+            <result name="input">pages/staff/editStaff.jsp</result>
+
+        </action>
+
+        <action name="advancedQuery" class="com.lanou.action.StaffAction" method="advancedQuery">
+
+            <result name="success">/pages/staff/listStaff.jsp</result>
+
+        </action>
+
+    </package>
+
+    <package name="ajax" extends="json-default">
+
+        <!-- 员工列表ajax部分 -->
+        <action name="findAllDepartAjax" class="com.lanou.action.StaffAction" method="findAllDepartAjax">
+
+            <result name="success" type="json">
+
+                <param name="root">departmentList</param>
+
+            </result>
+
+        </action>
+
+        <action name="findPostByDepatId" class="com.lanou.action.StaffAction" method="findPostByDepatId">
+
+            <result name="success" type="json">
+
+                <param name="root">posts</param>
+
+            </result>
+
+        </action>
+
     </package>
 
 </struts>

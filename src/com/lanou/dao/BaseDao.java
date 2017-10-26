@@ -13,6 +13,8 @@ public interface BaseDao<T> {
 
     List<T> find(String hql, Object[] params);
 
+    List<T> find(String hql, List<String> params);
+
     T findSingle(String hql, Object[] params);
 
     T findById(Serializable id, Class<T> tClass);

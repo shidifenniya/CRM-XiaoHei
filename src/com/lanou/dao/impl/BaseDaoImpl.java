@@ -25,7 +25,7 @@ public class BaseDaoImpl<T> extends HibernateDaoSupport implements BaseDao<T> {
 
         List<T> tList = (List<T>) getHibernateTemplate().find(hql,params);
 
-        return null;
+        return tList;
     }
 
     @Override
@@ -36,6 +36,15 @@ public class BaseDaoImpl<T> extends HibernateDaoSupport implements BaseDao<T> {
         if(tList.size() > 0) return tList.get(0);
 
         return null;
+    }
+
+    public List<T> find(String hql, List<String> params){
+
+
+        List<T> tList = (List<T>) getHibernateTemplate().find(hql, params);
+
+        return tList;
+
     }
 
     @Override

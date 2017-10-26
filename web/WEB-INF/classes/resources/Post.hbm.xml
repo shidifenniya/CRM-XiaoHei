@@ -7,7 +7,7 @@
             <generator class="uuid"/>
         </id>
         <property name="postName" length="100"/>
-        <set name="staffs" cascade="all">
+        <set name="staffs" cascade="all" lazy="false">
             <key column="postID"/>
             <one-to-many class="com.lanou.domain.Staff"/>
         </set>

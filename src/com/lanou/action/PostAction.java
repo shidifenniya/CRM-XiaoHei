@@ -32,6 +32,7 @@ public class PostAction extends ActionSupport implements ModelDriven<Post> {
     private Post post;
 
     private List<Post> posts;
+
     private List<Department> departmentList;
 
     private String depID;
@@ -47,6 +48,8 @@ public class PostAction extends ActionSupport implements ModelDriven<Post> {
     public String intoEditPost(){
 
         departmentList = departService.findAllDepart();
+
+        System.out.println(departmentList);
 
         if(post.getPostId() == null) return SUCCESS;
 
